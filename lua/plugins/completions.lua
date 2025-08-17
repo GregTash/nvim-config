@@ -41,4 +41,18 @@ return {
 			})
 		end,
 	},
+	{
+		"smolck/command-completion.nvim",
+		config = function()
+			require("command-completion").setup({
+				border = nil, -- passed to `nvim_open_win()`
+				max_col_num = 5, -- maximum columns
+				min_col_width = 20, -- minimum column width
+				use_matchfuzzy = true, -- use `matchfuzzy()` for ordering
+				highlight_selection = true, -- highlight current selection
+				highlight_directories = true, -- highlight directories
+				tab_completion = true, -- enable tab completion
+			})
+		end,
+	},
 }
