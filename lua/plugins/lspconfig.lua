@@ -28,6 +28,7 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.gdscript.setup({})
 
 			-- LSP keymaps
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
@@ -52,5 +53,5 @@ return {
 				severity_sort = true,
 			})
 		end,
-	}
+	},
 }

@@ -15,6 +15,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Godot server
+local projectfile = vim.fn.getcwd() .. '/project.godot'
+if vim.loop.fs_stat(projectfile) then
+    vim.fn.serverstart('./godothost')
+end
+
 -- Load plugins and vim options
 require("vim-options")
 require("lazy").setup("plugins")
